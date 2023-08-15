@@ -1,0 +1,89 @@
+
+
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+{% include 'inc/nav.html' %}
+<section id="hero">
+
+    <div class="container">
+     
+      <div class="row justify-content-between">
+        <div class="col-lg-7   d-flex ">
+          <div data-aos="zoom-out">
+            <form action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+
+            <h1><i class="material-icons" style="font-size:40px;">&#xe55c;</i> Find Your Route </h1>
+            <div class="col-md-6">
+             
+                
+               
+           
+                   
+              <input type="text" name="startpoint" class="form-control rounded-pill mt-4  " placeholder="&#xF002;   Choose starting location"  style=" height: 43px;font-family:Arial, FontAwesome" >
+             <input type="text"  name="destination" class="form-control rounded-pill mt-5" placeholder="&#xf041;   Choose destination"  style="height: 43px;font-family:Arial, FontAwesome" >
+    
+    
+           
+           </div>
+         <div class="text-center text-lg-start">
+          <input type="submit"  class="btn-get-started scrollto mt-3" value="search">
+         <!-- <button type="submit" class="btn-get-started scrollto mt-3"><i class="fa fa-search"></i> search</button>
+           <a href="" type="button" class="btn-get-started scrollto mt-3"><i class="fa fa-search"></i>  search</a>
+           -->
+         </div>
+        </form>
+        <div class="col-6 map">
+
+          {% if map %}
+    
+          {{map.html.render|safe}}
+      
+          <script>
+            {{map.script.render|safe}}
+          </script>
+          {% endif %}
+        </div>
+        <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+          <img src="{{static}}assets/img/hero-img.png" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+      </g>
+    </svg>
+  </div>
+  
+
+
+
+
+</div>
+  </section>
+  <div class="container">
+	
+
+		<div class="row">
+			
+			<div class="col-6">
+					
+			</div>
+		</div>
+			
+	</div>
+
+
+{% endblock content %}

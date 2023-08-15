@@ -1,0 +1,92 @@
+
+{% extends 'layouts/base.html' %}
+{% block content %}
+{% include 'inc/navbar.html' %}
+
+
+
+<section id="about" class="about">
+    <div class="container-fluid">
+
+      <div class="row">
+        
+        <div class="col-xl-5 col-lg-6 video-box3 d-flex justify-content-center align-items-stretch" data-aos="fade-right">
+          
+        </div>
+
+
+        
+
+        <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5 mt-5" data-aos="fade-left">
+         
+
+
+
+            <section id="pricing" class="pricing">
+                <div class="container pl-4">
+          
+                
+          
+            <div class="row" data-aos="fade-left">
+
+      
+                <div class="col-lg-10 ms-4 col-md-6 mt-4 mt-md-0">
+                  <div class="box featured shadow-sm " data-aos="zoom-in" data-aos-delay="200">
+                    <h3>Register Your Traffic Complaint </h3>
+                    
+                  
+                    <form action=""  enctype="multipart/form-data" method="post">
+                      {% csrf_token%}
+                        <div class="col-10 mt-5 ms-5">
+                        <input type="text" name="name"placeholder="Username" class="form-control rounded-pill shadow-sm"  required>
+                    </div>
+                        <div class="col-10 mt-4 ms-5">
+
+                        </div>
+                        <div class="col-10 mt-3 ms-5">
+                      
+                          <input type="text" name="phone"placeholder="Phone" class="form-control rounded-pill shadow-sm"  required>
+                         
+                        </div>
+                        <div class="col-10 mt-3 ms-5">
+                        
+                            <input type="text" name="place"placeholder="Enter the place of traffic issue" class="form-control rounded-pill shadow-sm"  required>
+                           
+                          </div>
+                         
+
+                          <div class="col-10 mt-3 ms-5">
+                        
+                            <input type="text" name="trafficissue"placeholder="Enter the  traffic issue" class="form-control rounded-pill shadow-sm"  required>
+                           
+                          </div>
+                          <div class="col-10 mt-3 ms-5">
+                        
+                            <div class="mb-3" ms-5>
+                                
+                                <input class="form-control rounded-pill shadow-sm" type="file" name="image">
+                              </div>
+                          </div>
+                    
+                    <div class="btn-wrap" type="submit">
+                      <button  type="submit" class="btn-buy shadow-sm">submit</button>
+                    </div>
+                </form>
+                  </div>
+                </div>
+    </section>
+
+         
+
+
+       
+
+        </div>
+      </div>
+       
+
+      
+    </div>
+  </section>
+  
+{% endblock content %}  

@@ -1,0 +1,53 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+{% include 'inc/nav.html' %}
+<section id="features" class="features">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+     <br><br>
+        <p class="mt-4">Traffic Complaints</p>
+      </div>
+       {% for i in trafficissues%}
+      <div class="row" data-aos="fade-left">
+        <div class="col-lg-2 col-md-4">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+            <i class="bi bi-person" style="color: #ffbb2c;"></i>
+            <h3><a href="">{{i.tname}}</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <i class="bi bi-telephone" style="color: #5578ff;"></i>
+            <h3><a href="">{{i.tphone}}</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
+            <i class="bi bi-geo-alt-fill" style="color: #e80368;"></i>
+            <h3><a href="">{{i.tplace}}</a></h3>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <i class="bi bi-exclamation-triangle-fill" style="color: #2a152f;"></i>
+            <h3><a href="">{{i.tissue}}</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
+             
+              <img src="{{i.timage.url}}" height="80px" >
+             
+            </div>
+          </div>
+        
+      </div>
+      <br>
+      {% endfor%}
+    </div>
+  </section>
+
+
+{% endblock content %} 
